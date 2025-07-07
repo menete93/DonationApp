@@ -1,0 +1,74 @@
+import { StyleSheet } from 'react-native';
+import {
+  horizontalScale,
+  scaleFontSize,
+  verticalScale,
+} from '../../../assets/styles/scaling';
+
+const Style = StyleSheet.create({
+  header: {
+    flexDirection: 'row', // Organiza os itens na horizontal (linha)
+    marginTop: verticalScale(50),
+    alignItems: 'flex-start', // Alinha ao topo do container (eixo vertical, pois 'row' está ativo)
+    justifyContent: 'space-between', // Espaço entre os itens
+    marginLeft: -8,
+    padding: horizontalScale(30),
+  },
+  messageIcon: {
+    padding: horizontalScale(14), // Adiciona um preenchimento de 14 unidades ao redor do ícone.
+    borderRadius: 100, // Torna o ícone redondo (raio de borda de 100 faz o círculo).
+    flexDirection: 'row',
+    backgroundColor: '#E0E2E5', // Define a cor de fundo do ícone como um tom claro de cinza (cor específica em hexadecimal).
+  },
+
+  messageNumberContainer: {
+    backgroundColor: '#F34BAC', // Define a cor de fundo do círculo de notificação com um tom de rosa.
+    justifyContent: 'center', // Centraliza o conteúdo (número dentro do círculo).
+    flexDirection: 'row', // Organiza os itens dentro do container na horizontal (isso é útil se você tiver mais de um item no futuro).
+    width: 10, // Largura do círculo, 10 unidades.
+    height: 10, // Altura do círculo, 10 unidades.
+    borderRadius: 8, // Torna o círculo arredondado (raio de borda igual ao tamanho da largura/altura).
+    alignItems: 'center', // Alinha os itens (número) no centro do círculo.
+    position: 'absolute', // A posição do elemento é definida em relação ao seu contêiner pai.
+    right: 33, // Coloca o círculo 10 unidades à direita do contêiner pai.
+    top: 40, // Coloca o círculo 14 unidades para baixo do topo do contêiner pai.
+  },
+
+  messageNumber: {
+    color: '#FFFFFF', // A cor do número será branca.
+    fontSize: scaleFontSize(6), // O tamanho da fonte do número é 6 unidades, bem pequeno.
+    fontFamily: 'Inter_18pt-LightItalic', // A família da fonte é 'Inter', estilo 'LightItalic' (itálico claro), com tamanho 18pt.
+  },
+  userStoryContainer: {
+    marginTop: 80,
+    width: '400',
+    position: 'absolute',
+    fontFamily: 'Inter_18pt-SemiBoldItalic',
+  },
+  userPostContainer: {
+    marginTop: horizontalScale(50),
+  },
+  containerFlatlist: {
+    flex: 1,
+    paddingHorizontal: horizontalScale(30),
+    // paddingVertical: 19,
+  },
+  containerPost: {
+    flex: 1,
+    paddingTop: horizontalScale(20),
+
+    // paddingHorizontal: 30,
+  },
+  conteinerStyle: {
+    paddingHorizontal: horizontalScale(43),
+    justifyContent: 'center', // funciona apenas se o conteúdo couber na tela
+  },
+  switch: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    // marginTop: -10,
+  },
+});
+
+export default Style;
