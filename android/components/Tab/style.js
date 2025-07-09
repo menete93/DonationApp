@@ -8,16 +8,17 @@ import {
 const style = StyleSheet.create({
   tab: {
     backgroundColor: '#2979F2',
-    height: verticalScale(50),
+    height: verticalScale(40),
     borderRadius: horizontalScale(50),
     justifyContent: 'center',
   },
 
   title: {
     color: '#FFFFFF',
-    fontFamily: getFontFamily(2, 500),
+    fontFamily: getFontFamily(3, 600),
     fontSize: scaleFontSize(14),
     alignSelf: 'center',
+    paddingHorizontal: horizontalScale(30), // <-- Adicione esta linha
   },
   inactiveTab: {
     backgroundColor: '#F3F5F9',

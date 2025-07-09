@@ -20,6 +20,7 @@ const Searh = props => {
     <Pressable style={style.searchContainer} onPress={handleFocus}>
       <Icon name="search" size={scaleFontSize(22)} color={'#25C0FF'} />
       <TextInput
+        placeholder={props.placeholder}
         ref={TextInputRef}
         style={style.searchInput}
         value={search}
@@ -31,10 +32,12 @@ const Searh = props => {
 
 Searh.defaultProps = {
   onSearch: () => {},
+  placeholder: 'search',
 };
 
 Searh.PropTypes = {
   onSearch: PropTypes.func,
+  placeholder: PropTypes.string,
 };
 
 export default Searh;

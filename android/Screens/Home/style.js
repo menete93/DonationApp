@@ -4,15 +4,36 @@ import {
   scaleFontSize,
   verticalScale,
 } from '../../../assets/styles/scaling';
+import getFontFamily from '../../../assets/helper';
 
 const Style = StyleSheet.create({
   header: {
-    flexDirection: 'row', // Organiza os itens na horizontal (linha)
-    marginTop: verticalScale(50),
-    alignItems: 'flex-start', // Alinha ao topo do container (eixo vertical, pois 'row' está ativo)
-    justifyContent: 'space-between', // Espaço entre os itens
-    marginLeft: -8,
-    padding: horizontalScale(30),
+    marginTop: verticalScale(20),
+    marginHorizontal: horizontalScale(20),
+    flexDirection: 'row',
+  },
+  userInfo: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  userName: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 20,
+    paddingTop: 0,
+    width: '80%', // garante que ocupe a largura total
+    paddingHorizontal: 1,
+  },
+
+  headerIntrotext: {
+    fontSize: scaleFontSize(16),
+    fontFamily: getFontFamily(2, 600),
+    lineHeight: scaleFontSize(19),
+    fontWeight: '400',
+    color: '#636776',
+    marginBottom: verticalScale(2),
+    marginTop: 10,
   },
   messageIcon: {
     padding: horizontalScale(14), // Adiciona um preenchimento de 14 unidades ao redor do ícone.
@@ -32,6 +53,11 @@ const Style = StyleSheet.create({
     position: 'absolute', // A posição do elemento é definida em relação ao seu contêiner pai.
     right: 33, // Coloca o círculo 10 unidades à direita do contêiner pai.
     top: 40, // Coloca o círculo 14 unidades para baixo do topo do contêiner pai.
+  },
+  profileImage: {
+    width: horizontalScale(45),
+    height: horizontalScale(45),
+    borderRadius: horizontalScale(22.5),
   },
 
   messageNumber: {
@@ -67,7 +93,30 @@ const Style = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    // marginTop: -10,
+  },
+  username: {
+    marginTop: 10,
+  },
+  search: {
+    marginHorizontal: horizontalScale(20),
+    marginTop: horizontalScale(-70),
+  },
+  highLightedImageContainer: {
+    marginHorizontal: verticalScale(20),
+    marginBottom: verticalScale(-40), // ← reduz
+  },
+  highLightedImage: {
+    width: '100%',
+    height: verticalScale(160),
+  },
+  categories: {
+    marginLeft: horizontalScale(18),
+  },
+  categoryItem: {
+    marginRight: horizontalScale(10),
+  },
+  categoryHeader: {
+    marginHorizontal: horizontalScale(60),
   },
 });
 
