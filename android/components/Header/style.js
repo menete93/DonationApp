@@ -4,10 +4,10 @@ import { scaleFontSize, verticalScale } from './../../../assets/styles/scaling';
 
 const style = StyleSheet.create({
   title1: {
-    fontFamily: getFontFamily(3, 600),
+    fontFamily: getFontFamily(1, 700),
     fontSize: scaleFontSize(20),
     lineHeight: scaleFontSize(20),
-    marginLeft: -40,
+    marginLeft: 20,
   },
 
   title2: {
@@ -21,7 +21,8 @@ const style = StyleSheet.create({
     fontFamily: getFontFamily(3, 600),
     fontSize: scaleFontSize(16),
     lineHeight: scaleFontSize(18),
-    marginLeft: -40,
+    marginLeft: 5,
+    marginTop: -50,
   },
 });
 

@@ -19,8 +19,11 @@ import { horizontalScale, verticalScale } from '../../../assets/styles/scaling';
 import Searh from '../../components/Search/Search';
 import Tab from '../../components/Tab/Tab';
 import { updateSelectategoryId } from '../../components/Search/redux/reducers/Categories';
+import SingleDonationItem from '../../components/SingleDonationItem/SingleDonationItem';
+import { updateSelectedDonationId } from '../../components/Search/redux/reducers/Donation';
+import { Routes } from '../../../Navigation/Routes';
 
-const Home = () => {
+const Home = ({ navigation }: { navigation: any }) => {
   const categories = useSelector((state: RootState) => state.categories);
   const donation = useSelector((state: RootState) => state.donations);
   const user = useSelector((state: RootState) => state.user);
@@ -36,19 +39,30 @@ const Home = () => {
     categoryId: number;
     name: string;
   };
+  type DonationItem = {
+    name: string;
+    description: string;
+    image: string;
+    donationItemId: number;
+    categoryIds: number[];
+
+    price: string;
+  };
+  const [donationItems, setDonationItems] = useState<DonationItem[]>([]);
   const [categoryPage, setCategoryPage] = useState(1);
   const [categoryList, setCategoryList] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
-
   const categoryPageSize = 4;
+
+  console.log('USE STATE DONATION', donationItems);
 
   useEffect(() => {
     console.log('run this function');
-    const item = donation.items;
-    const filteredItem = item.filter(value =>
+    const items = donation.items.filter(value =>
       value.categoryIds.includes(categories.selectedCategoryId),
     );
-    console.log(filteredItem);
+    setDonationItems(items);
+    console.log(items);
   }, [categories.selectedCategoryId, donation.items]);
 
   useEffect(() => {
@@ -92,7 +106,10 @@ const Home = () => {
   };
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ paddingBottom: 100 }}
+      >
         <View style={style.header}>
           <View style={style.userInfo}>
             <Text style={style.headerIntrotext}>Hello,</Text>
@@ -146,6 +163,36 @@ const Home = () => {
             onEndReached={loadMoreCategories}
           />
         </View>
+        <View />
+        {donationItems.length > 0 && (
+          <View style={style.donationItemsContainer}>
+            {donationItems.map(value => {
+              const categoryInformation = categories.categories.find(
+                val => val.categoryId === categories.selectedCategoryId,
+              );
+              return (
+                <View
+                  key={value.donationItemId}
+                  style={style.singleDonationItem}
+                >
+                  <SingleDonationItem
+                    onPress={(selectedDonationId: any) => {
+                      dispatch(updateSelectedDonationId(selectedDonationId));
+                      navigation.navigate(Routes.SingleDonationItem, {
+                        categoryInformation,
+                      });
+                    }}
+                    uri={value.image}
+                    donationTitle={value.name}
+                    {...value}
+                    badgeTitle={categoryInformation?.name}
+                    price={parseFloat(value.price)}
+                  />
+                </View>
+              );
+            })}
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );

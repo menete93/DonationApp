@@ -80,8 +80,8 @@ const Style = StyleSheet.create({
     // paddingVertical: 19,
   },
   containerPost: {
-    flex: 1,
-    paddingTop: horizontalScale(20),
+    // flex: 1,
+    paddingTop: horizontalScale(10),
 
     // paddingHorizontal: 30,
   },
@@ -117,6 +117,17 @@ const Style = StyleSheet.create({
   },
   categoryHeader: {
     marginHorizontal: horizontalScale(60),
+  },
+  donationItemsContainer: {
+    paddingHorizontal: horizontalScale(12),
+    paddingTop: verticalScale(12),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+  },
+  singleDonationItem: {
+    maxWidth: '49%',
+    marginBottom: verticalScale(23),
   },
 });
 

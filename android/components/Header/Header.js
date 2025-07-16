@@ -22,7 +22,10 @@ const Header = props => {
   return (
     <SafeAreaView>
       <View>
-        <Text style={[styleToApply(), props.color && { color: props.color }]}>
+        <Text
+          style={[styleToApply(), props.color && { color: props.color }]}
+          numberOfLines={props.numberOfLines ? props.numberOfLines : null} //este operador ternario e para assegurar que onde for usado esse hearder caso nao seja passado o numberOflines ele assuma null por default
+        >
           {props.title}
         </Text>
       </View>
@@ -39,6 +42,7 @@ Header.default = {
 Header.PropTypes = {
   title: PropTypes.string,
   tyle: PropTypes.number,
+  numberOfLines: PropTypes.number,
 };
 
 export default Header;
