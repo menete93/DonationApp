@@ -1,5 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { horizontalScale, verticalScale } from '../../../assets/styles/scaling';
+import {
+  horizontalScale,
+  verticalScale,
+  scaleFontSize,
+} from '../../../assets/styles/scaling';
+
+import getFontFamily from '../../../assets/helper';
 
 const style = StyleSheet.create({
   container: {
@@ -15,6 +21,19 @@ const style = StyleSheet.create({
   newaccount: {
     justifyContent: 'center', // centraliza verticalmente
     alignItems: 'center', // centraliza horizontalmente
+  },
+
+  error: {
+    fontFamily: getFontFamily(2, 500),
+    fontSize: scaleFontSize(16),
+    color: '#FF0000',
+    marginBottom: verticalScale(24),
+  },
+  success: {
+    fontFamily: getFontFamily(2, 500),
+    fontSize: scaleFontSize(16),
+    color: '#28a745',
+    marginBottom: verticalScale(24),
   },
 });
 

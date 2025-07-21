@@ -7,7 +7,7 @@ const style = StyleSheet.create({
     fontFamily: getFontFamily(1, 700),
     fontSize: scaleFontSize(20),
     lineHeight: scaleFontSize(20),
-    marginLeft: 3,
+    marginLeft: -43,
   },
 
   title2: {

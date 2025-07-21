@@ -129,6 +129,14 @@ const Style = StyleSheet.create({
     maxWidth: '49%',
     marginBottom: verticalScale(23),
   },
+  logoutContainer: {
+    alignSelf: 'flex-end', // garante que fique à esquerda
+  },
+
+  logout: {
+    marginHorizontal: horizontalScale(40), // ou qualquer valor que desejar, ex: 10, 20, etc.
+    marginVertical: verticalScale(-10),
+  },
 });
 
 export default Style;

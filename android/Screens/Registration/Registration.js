@@ -7,6 +7,7 @@ import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
 import BackButton from '../../components/BackButton/BackButton';
 import createUser from '../../api/user';
+import { Routes } from '../../../Navigation/Routes';
 
 const Registration = ({ navigation }) => {
   const [fullName, setFullName] = useState('');
@@ -18,7 +19,7 @@ const Registration = ({ navigation }) => {
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <View style={style.backbutton}>
-        <BackButton onPress={() => navigation.goBack()} />
+        <BackButton onPress={() => navigation.navigate(Routes.Login)} />
       </View>
       <ScrollView
         showsVerticalScrollIndicator={false}

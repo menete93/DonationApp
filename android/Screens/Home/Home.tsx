@@ -13,7 +13,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header/Header';
 import globalStyle from '../../../assets/styles/globalStyle';
 import { RootState } from '../../components/Search/redux/reducers/store';
-import { resetToInitialState } from '../../components/Search/redux/reducers/Users';
 import style from './style';
 import { horizontalScale, verticalScale } from '../../../assets/styles/scaling';
 import Searh from '../../components/Search/Search';
@@ -22,6 +21,8 @@ import { updateSelectategoryId } from '../../components/Search/redux/reducers/Ca
 import SingleDonationItem from '../../components/SingleDonationItem/SingleDonationItem';
 import { updateSelectedDonationId } from '../../components/Search/redux/reducers/Donation';
 import { Routes } from '../../../Navigation/Routes';
+import { resetToInitialState } from '../../components/Search/redux/reducers/Users';
+import { logOut } from '../../api/user';
 
 const Home = ({ navigation }: { navigation: any }) => {
   const categories = useSelector((state: RootState) => state.categories);
@@ -30,10 +31,7 @@ const Home = ({ navigation }: { navigation: any }) => {
   console.log('this is our currentle Donation', donation);
   const dispatch = useDispatch();
   console.log(categories);
-  useEffect(() => {
-    dispatch(resetToInitialState());
-  }, [dispatch]);
-  // console.log(user);
+  console.log(user, 'home');
 
   type Category = {
     categoryId: number;
@@ -115,7 +113,8 @@ const Home = ({ navigation }: { navigation: any }) => {
             <Text style={style.headerIntrotext}>Hello,</Text>
           </View>
           <View style={style.userName}>
-            <Header title={`${user.firstName} ${user.lastName[0]}. 👋`} />
+            <Header title={`${user.displayName} . 👋`} />
+
             <Image
               style={{
                 width: horizontalScale(45),
@@ -127,6 +126,18 @@ const Home = ({ navigation }: { navigation: any }) => {
             />
           </View>
         </View>
+        <View style={style.logoutContainer}>
+          <Pressable
+            style={style.logout}
+            onPress={async () => {
+              dispatch(resetToInitialState());
+              await logOut();
+            }}
+          >
+            <Header type={3} title={'Logout'} color={'#156CF7'} />
+          </Pressable>
+        </View>
+
         <View style={style.search}>
           <Searh placeholder={'Search'} />
         </View>

@@ -27,7 +27,6 @@ const style = StyleSheet.create({
     color: '#FF0000',
     marginBottom: verticalScale(24),
   },
-
   success: {
     fontFamily: getFontFamily(2, 500),
     fontSize: scaleFontSize(16),
