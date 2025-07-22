@@ -65,6 +65,8 @@
 		7172099A2F0F4FE3ABAA9220 /* Inter_28pt-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46027079EA634585B1312607 /* Inter_28pt-SemiBoldItalic.ttf */; };
 		DC8A30EB653149D7B0D77E7B /* Inter_28pt-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED516F2E5DA9451994D372CF /* Inter_28pt-Thin.ttf */; };
 		5997B1FA68104E0D811221CA /* Inter_28pt-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8B93261BCDA4701892B1D47 /* Inter_28pt-ThinItalic.ttf */; };
+		164394B3F07543DE93BE0968 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63763B0BC3014A8D80141D5C /* BootSplash.storyboard */; };
+		DA90AB8440AF41C5B0355E43 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83804181FD9C41E99A9677A9 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,8 @@
 		46027079EA634585B1312607 /* Inter_28pt-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Inter_28pt-SemiBoldItalic.ttf"; path = "../assets/fonts/Inter_28pt-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		ED516F2E5DA9451994D372CF /* Inter_28pt-Thin.ttf */ = {isa = PBXFileReference; name = "Inter_28pt-Thin.ttf"; path = "../assets/fonts/Inter_28pt-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A8B93261BCDA4701892B1D47 /* Inter_28pt-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Inter_28pt-ThinItalic.ttf"; path = "../assets/fonts/Inter_28pt-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		63763B0BC3014A8D80141D5C /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "DonationApp/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		83804181FD9C41E99A9677A9 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "DonationApp/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				63763B0BC3014A8D80141D5C /* BootSplash.storyboard */,
+				83804181FD9C41E99A9677A9 /* Colors.xcassets */,
 			);
 			name = DonationApp;
 			sourceTree = "<group>";
@@ -410,6 +416,8 @@
 				7172099A2F0F4FE3ABAA9220 /* Inter_28pt-SemiBoldItalic.ttf in Resources */,
 				DC8A30EB653149D7B0D77E7B /* Inter_28pt-Thin.ttf in Resources */,
 				5997B1FA68104E0D811221CA /* Inter_28pt-ThinItalic.ttf in Resources */,
+				164394B3F07543DE93BE0968 /* BootSplash.storyboard in Resources */,
+				DA90AB8440AF41C5B0355E43 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
